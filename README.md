@@ -1,6 +1,8 @@
-# SitRight! RN Skeleton
+# SitRight! Mobile Front-End
 
-This is a UI starter project for the EE4 Mobile Healthcare with Machine Learning course. The aim for the project is to develop an interactive posture education system for the workplace, such that common workplace injury due to misuse of chairs and incorrect postures are prevented.  
+This is a mobile UI project for the EE4 Mobile Healthcare with Machine Learning course. The aim for the project is to develop an interactive posture education system for the workplace, such that common workplace injury due to misuse of chairs and incorrect postures are prevented.  
+
+The previous skeleton project was a demonstrator of using grabbing the urban-spork json files via Redux Thunk. This project will build on this to provide posture history.
 
 This project was bootstrapped with [React Native](https://facebook.github.io/react-native/docs/getting-started.html) Starter Kit with [NativeBase](https://nativebase.io/) + [React Navigation](https://reactnavigation.org/) + [Redux](https://github.com/reactjs/redux) Apps (iOS & Android)
 

@@ -19,14 +19,14 @@ class ScorePage extends React.Component<Props, State> {
 					</Left>
 
 					<Body style={{ flex: 3 }}>
-						<Title>{param ? param.name.item : "Blank Page"}</Title>
+						<Title>{param ? param.name.item : "Your Past Postures"}</Title>
 					</Body>
 
 					<Right />
 				</Header>
 
 				<Content padder>
-					<Text>{param !== undefined ? param.name.item : "Create Something Awesome . . ."}</Text>
+					<Text>{param !== undefined ? param.name.item : "Nothing to show yet..."}</Text>
 				</Content>
 			</Container>
 		);
