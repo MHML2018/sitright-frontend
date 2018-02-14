@@ -6,14 +6,14 @@ export interface Props {
 	navigation: any;
 }
 export interface State {}
-class BlankPage extends React.Component<Props, State> {
+class ScorePage extends React.Component<Props, State> {
 	render() {
-		const param = this.props.navigation.state.params;
+		const param = ScorePage.props.navigation.state.params;
 		return (
 			<Container style={styles.container}>
 				<Header>
 					<Left>
-						<Button transparent onPress={() => this.props.navigation.goBack()}>
+						<Button transparent onPress={() => ScorePage.props.navigation.goBack()}>
 							<Icon name="ios-arrow-back" />
 						</Button>
 					</Left>
@@ -33,4 +33,4 @@ class BlankPage extends React.Component<Props, State> {
 	}
 }
 
-export default BlankPage;
+export default ScorePage;

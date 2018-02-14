@@ -8,8 +8,8 @@ const routes = [
 		caption: "Home",
 	},
 	{
-		route: "BlankPage",
-		caption: "Blank Page",
+		route: "ScorePage",
+		caption: "Past Postures",
 	},
 	{
 		route: "Login",
