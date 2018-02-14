@@ -21,9 +21,9 @@ This project was bootstrapped with [React Native](https://facebook.github.io/rea
 On the command prompt run the following commands
 
 ```sh
-$ git clone https://github.com/GeekyAnts/react-native-boilerplate-redux-flow.git
+$ git clone https://github.com/MHML2018/sitright-frontend
 
-$ cd react-native-boilerplate-redux-flow/
+$ cd sitright-frontend/
 
 $ npm install
   or
