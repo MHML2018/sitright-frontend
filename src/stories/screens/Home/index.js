@@ -83,7 +83,7 @@ class Home extends React.Component<Props, State> {
                 onPress={() =>
                   this.props.onRefresh()}
               >
-                <Text>{ "Today's Average: "+(typeof this.props.list.score === "undefined" || this.props.list.score == null?" calculating...":this.props.list.score*100+"%")}</Text>
+                <Text>{ "Today's Average: "+(typeof this.props.list.score === "undefined" || this.props.list.score == null?" calculating...":Math.round(this.props.list.score*100)+"%")}</Text>
             </ListItem>
             <ListItem>
               <Text>{this.props.list.ui || "Loading posture information..."}</Text>
