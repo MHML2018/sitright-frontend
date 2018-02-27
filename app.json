@@ -1,10 +1,10 @@
 {
   "expo": {
     "sdkVersion": "24.0.0",
-    "slug": "React-Native-Seed",
+    "slug": "SitRight-Demo",
     "loading": {
       "hideExponentText": false,
-      "icon": "./assets/loading.png"
+      "icon": "./assets/logo_lg.png"
     },
     "orientation": "portrait",
     "primaryColor": "#cccccc",
@@ -15,6 +15,7 @@
     "androidStatusBar": {
       "barStyle": "light-content",
       "backgroundColor": "#334393"
-    }
+    },
+	"privacy": "unlisted"
   }
 }
