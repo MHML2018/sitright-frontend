@@ -5,6 +5,7 @@ import { Container, Content, Header, Body, Title, Button, Text, View, Icon, Foot
 export interface Props {
 	loginForm: any,
 	onLogin: Function,
+	onMagicLogin: Function,
 }
 export interface State {}
 class Login extends React.Component<Props, State> {
@@ -27,6 +28,11 @@ class Login extends React.Component<Props, State> {
 					<View padder>
 						<Button block onPress={() => this.props.onLogin()}>
 							<Text>Sign In</Text>
+						</Button>
+					</View>
+					<View padder>
+						<Button block onPress={() => this.props.onMagicLogin()}>
+							<Text>Sign In with Facebook</Text>
 						</Button>
 					</View>
 				</Content>

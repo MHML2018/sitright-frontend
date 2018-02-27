@@ -12,6 +12,14 @@ const routes = [
 		caption: "Past Postures",
 	},
 	{
+		route: "ScorePage",
+		caption: "Goals",
+	},
+	{
+		route: "ScorePage",
+		caption: "Friends",
+	},
+	{
 		route: "Login",
 		caption: "Logout",
 	},

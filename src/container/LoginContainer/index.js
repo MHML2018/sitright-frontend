@@ -41,6 +41,17 @@ class LoginForm extends React.Component<Props, State> {
     );
   }
 
+  magicLogin() {
+    Toast.show({
+      text: "Signing in with your Facebook Account",
+      duration: 1000,
+      position: "top",
+      textStyle: { textAlign: "center" }
+    });
+      this.props.valid = true;
+      this.props.navigation.navigate("Drawer");
+  }
+
   login() {
     if (this.props.valid) {
       this.props.navigation.navigate("Drawer");
@@ -74,6 +85,7 @@ class LoginForm extends React.Component<Props, State> {
         navigation={this.props.navigation}
         loginForm={form}
         onLogin={() => this.login()}
+        onMagicLogin={() => this.magicLogin()}
       />
     );
   }

@@ -68,8 +68,15 @@ class Home extends React.Component<Props, State> {
               onPress={() =>
                 this.props.navigation.navigate("Home")}
             >
-              <Text>{"" || "Score: "+this.props.list.posture}</Text>
+              <Text>{"" || "Now: "+this.props.list.posture}</Text>
             </ListItem>
+            
+              <ListItem
+                onPress={() =>
+                  this.props.navigation.navigate("Home")}
+              >
+                <Text>{"" || "Today: "+this.props.list.score}</Text>
+              </ListItem>
             <ListItem>
               <Text>{this.props.list.ui || "Loading..."}</Text>
             </ListItem>
