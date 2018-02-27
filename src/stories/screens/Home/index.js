@@ -64,11 +64,14 @@ class Home extends React.Component<Props, State> {
             />
           </View>
           <List>
-            <ListItem>
+            <ListItem
+              onPress={() =>
+                this.props.navigation.navigate("Home")}
+            >
               <Text>{"" || "Score: "+this.props.list.posture}</Text>
             </ListItem>
             <ListItem>
-              <Text>{"Loading" || this.props.list.ui}</Text>
+              <Text>{this.props.list.ui || "Loading..."}</Text>
             </ListItem>
 
             {/* this.props.list.map((item, i) => {
