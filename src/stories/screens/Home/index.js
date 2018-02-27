@@ -26,10 +26,15 @@ export interface State {}
 class Home extends React.Component<Props, State> {
   render() {
 
-    var thumburi = require("../../../../assets/down.png");
-    if (typeof this.props.list !== 'undefined' && this.props.list.posture
-      && this.props.list.posture > 0.5){
-      thumburi = require("../../../../assets/up.png");
+    var currentScore = "Please sit on chair for current posture.";
+    var thumburi = require("../../../../assets/empty.png");
+    if (typeof this.props.list !== 'undefined' && this.props.list.occupied != 0){
+      currentScore = (this.props.list.posture>0.5?"Good posture":"Leaning back");
+      if (this.props.list.posture > 0.5){
+        thumburi = require("../../../../assets/up.png");
+      }else{
+        thumburi = require("../../../../assets/down.png");
+      }
     }
 
 
@@ -46,7 +51,7 @@ class Home extends React.Component<Props, State> {
             </Button>
           </Left>
           <Body>
-            <Title>Posture Now</Title>
+            <Title>Current Posture</Title>
           </Body>
           <Right />
         </Header>
@@ -65,21 +70,23 @@ class Home extends React.Component<Props, State> {
             />
           </View>
           <List>
+            <ListItem>
+              <Text style={{"fontWeight":"bold"}}>Your Posture Stats</Text>
+            </ListItem>
             <ListItem
               onPress={() =>
-                this.props.navigation.navigate("Home")}
+                this.props.onRefresh()}
             >
-              <Text>{"" || "Now: "+this.props.list.posture}</Text>
+              <Text>{currentScore}</Text>
             </ListItem>
-
-              <ListItem
+            <ListItem
                 onPress={() =>
-                  this.props.navigation.navigate("Home")}
+                  this.props.onRefresh()}
               >
-                <Text>{"" || "Today: "+this.props.list.score}</Text>
-              </ListItem>
+                <Text>{ "Today's Average: "+(typeof this.props.list.score === "undefined" || this.props.list.score == null?" calculating...":this.props.list.score*100+"%")}</Text>
+            </ListItem>
             <ListItem>
-              <Text>{this.props.list.ui || "Loading..."}</Text>
+              <Text>{this.props.list.ui || "Loading posture information..."}</Text>
             </ListItem>
 
             {/* this.props.list.map((item, i) => {

@@ -10,13 +10,20 @@ export interface Props {
 	data: Object,
 	thumburi: Object,
 }
+
 export interface State {}
 class HomeContainer extends React.Component<Props, State> {
+
+	refreshData() {
+		const jsonurl = "http://mhml-demo.cmpoon.com:8000";
+		this.props.fetchList(jsonurl);
+	}
+
 	componentDidMount() {
-		this.props.fetchList("http://mhml-demo.cmpoon.com:8000");
+		this.refreshData();
 	}
 	render() {
-		return <Home navigation={this.props.navigation} list={this.props.data} />;
+		return <Home navigation={this.props.navigation} list={this.props.data} onRefresh={() => this.refreshData()}/>;
 	}
 }
 

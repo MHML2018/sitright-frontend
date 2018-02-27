@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Text, Container, List, ListItem, Content } from "native-base";
+import { Image, Platform } from "react-native";
+import { Text, Container, List, ListItem, Content,  Header, Body, Title, View, Icon } from "native-base";
 import { NavigationActions } from "react-navigation";
 
 const routes = [
@@ -20,6 +21,10 @@ const routes = [
 		caption: "Friends",
 	},
 	{
+		route: "ScorePage",
+		caption: "Settings",
+	},
+	{
 		route: "Login",
 		caption: "Logout",
 	},
@@ -37,6 +42,18 @@ export default class Sidebar extends React.Component<Props, State> {
 	render() {
 		return (
 			<Container>
+				<Header style={{ height: 150 }}>
+					<Body style={{ alignItems: "center" }}>
+					<Icon name="person" style={{ fontSize: 34 }} />
+						<Title>Jon Rawlinson</Title>
+						<View padder>
+							<Text style={{ color: Platform.OS === "ios" ? "#000" : "#FFF" }}>
+								36 SitRight! Days
+							</Text>
+						</View>
+					</Body>
+				</Header>
+
 				<Content>
 					<List
 						style={{ marginTop: 40 }}

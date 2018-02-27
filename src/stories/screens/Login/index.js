@@ -14,7 +14,16 @@ class Login extends React.Component<Props, State> {
 			<Container>
 				<Header style={{ height: 200 }}>
 					<Body style={{ alignItems: "center" }}>
-						<Icon name="flash" style={{ fontSize: 104 }} />
+						{ /*}<Icon name="flash" style={{ fontSize: 104 }} /> */}
+						<Image
+							source={require("../../../../assets/posture.png")}
+							style={
+								{
+									"width": 210,
+									"height": 100
+								}
+							}
+						/>
 						<Title>SitRight!</Title>
 						<View padder>
 							<Text style={{ color: Platform.OS === "ios" ? "#000" : "#FFF" }}>

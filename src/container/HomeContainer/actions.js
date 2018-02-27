@@ -28,7 +28,9 @@ export function fetchList(url: any) {
 			 }, 500);
 		})
 		.catch((error) => {
-			console.error(error,"Error: cannot load json! uh-oh!");
+			console.warn("Uh-oh! Cannot connect to chair :'(");
+
+			//console.error(error,"Error: cannot load json! uh-oh!");
 		});
 
 		dispatch(listIsLoading(true));
