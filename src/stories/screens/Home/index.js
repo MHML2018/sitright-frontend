@@ -52,13 +52,14 @@ class Home extends React.Component<Props, State> {
         </Header>
         <Content>
         <View style={{
+              marginTop: 20,
                flex: 1,
                flexDirection: 'column',
                justifyContent: 'center',
                alignItems: 'center',
              }}>
               <Image
-              style={{width: 422, height: 422}}
+              style={{width: 300, height: 300}}
               /* source={require("../../../../assets/up.png")} */
               source={thumburi}
             />
@@ -70,7 +71,7 @@ class Home extends React.Component<Props, State> {
             >
               <Text>{"" || "Now: "+this.props.list.posture}</Text>
             </ListItem>
-            
+
               <ListItem
                 onPress={() =>
                   this.props.navigation.navigate("Home")}

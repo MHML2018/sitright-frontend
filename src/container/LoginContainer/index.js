@@ -45,7 +45,7 @@ class LoginForm extends React.Component<Props, State> {
     Toast.show({
       text: "Signing in with your Facebook Account",
       duration: 1000,
-      position: "top",
+      position: "bottom",
       textStyle: { textAlign: "center" }
     });
       this.props.valid = true;
