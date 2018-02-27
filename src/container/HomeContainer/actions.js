@@ -12,12 +12,19 @@ export function fetchListSuccess(list: Object) {
 }
 export function fetchList(url: any) {
 
-	return dispatch => {
+	return function(dispatch, getState) {
+	fetch(url)
+	.then(e => e.json())
+		.then(function(response){
+			console.log(response);
+			dispatch(fetchListSuccess(response));
+			dispatch(listIsLoading(false));
+		})
+		.catch((error) => {
+			console.error(error,"Error: cannot load json! uh-oh!");
+		});
+
 		dispatch(listIsLoading(true));
 	};
 
-	return dispatch => {
-		dispatch(fetchListSuccess((url: any)));
-		dispatch(listIsLoading(false));
-	};
 }

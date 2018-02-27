@@ -16,8 +16,6 @@ class HomeContainer extends React.Component<Props, State> {
 		this.props.fetchList("http://mhml-demo.cmpoon.com:8000");
 	}
 	render() {
-
-
 		return <Home navigation={this.props.navigation} list={this.props.data} />;
 	}
 }

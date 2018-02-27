@@ -27,8 +27,8 @@ class Home extends React.Component<Props, State> {
   render() {
 
     var thumburi = require("../../../../assets/down.png");
-    if (typeof this.props.list !== 'undefined' && this.props.list.posture_good
-      && this.props.list.posture_good > 0){
+    if (typeof this.props.list !== 'undefined' && this.props.list.posture
+      && this.props.list.posture > 0.5){
       thumburi = require("../../../../assets/up.png");
     }
 
@@ -60,22 +60,32 @@ class Home extends React.Component<Props, State> {
               <Image
               style={{width: 422, height: 422}}
               /* source={require("../../../../assets/up.png")} */
-              thumburi={thumburi}
+              source={thumburi}
             />
           </View>
-
           <List>
-            {this.props.list.map((item, i) => (
-              <ListItem
-                key={i}
-                onPress={() =>
-                  this.props.navigation.navigate("ScorePage", {
-                    name: { item }
-                  })}
-              >
-                <Text>{item}</Text>
-              </ListItem>
-            ))}
+            <ListItem>
+              <Text>{"" || "Score: "+this.props.list.posture}</Text>
+            </ListItem>
+            <ListItem>
+              <Text>{"Loading" || this.props.list.ui}</Text>
+            </ListItem>
+
+            {/* this.props.list.map((item, i) => {
+             if (i == "posture" || i == "ui"){
+              return (
+                <ListItem
+                  key={i}
+                  onPress={() =>
+                    this.props.navigation.navigate("ScorePage", {
+                      name: { item }
+                    })}
+                >
+                  <Text>{item}</Text>
+                </ListItem>
+            )
+          }
+        }) */}
           </List>
         </Content>
       </Container>
