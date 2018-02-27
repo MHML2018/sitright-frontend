@@ -8,12 +8,12 @@ export interface Props {
 export interface State {}
 class ScorePage extends React.Component<Props, State> {
 	render() {
-		const param = ScorePage.props.navigation.state.params;
+		const param = this.props.navigation.state.params;
 		return (
 			<Container style={styles.container}>
 				<Header>
 					<Left>
-						<Button transparent onPress={() => ScorePage.props.navigation.goBack()}>
+						<Button transparent onPress={() => this.props.navigation.goBack()}>
 							<Icon name="ios-arrow-back" />
 						</Button>
 					</Left>

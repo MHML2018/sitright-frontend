@@ -11,6 +11,11 @@ export function fetchListSuccess(list: Object) {
 	};
 }
 export function fetchList(url: any) {
+
+	return dispatch => {
+		dispatch(listIsLoading(true));
+	};
+
 	return dispatch => {
 		dispatch(fetchListSuccess((url: any)));
 		dispatch(listIsLoading(false));

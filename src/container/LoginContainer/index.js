@@ -10,7 +10,7 @@ const maxLength = max => value =>
 const maxLength15 = maxLength(15);
 const minLength = min => value =>
   value && value.length < min ? `Must be ${min} characters or more` : undefined;
-const minLength8 = minLength(8);
+const minLength8 = minLength(1);
 const email = value =>
   value && !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
     ? "Invalid email address"

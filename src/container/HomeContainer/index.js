@@ -8,13 +8,16 @@ export interface Props {
 	navigation: any,
 	fetchList: Function,
 	data: Object,
+	thumburi: Object,
 }
 export interface State {}
 class HomeContainer extends React.Component<Props, State> {
 	componentDidMount() {
-		this.props.fetchList(datas);
+		this.props.fetchList("http://mhml-demo.cmpoon.com:8000");
 	}
 	render() {
+
+
 		return <Home navigation={this.props.navigation} list={this.props.data} />;
 	}
 }
