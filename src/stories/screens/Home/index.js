@@ -28,8 +28,8 @@ class Home extends React.Component<Props, State> {
 
     var currentScore = "Please sit on chair for current posture.";
     var thumburi = require("../../../../assets/empty.png");
-    if (typeof this.props.list !== 'undefined' && this.props.list.occupied != 0){
-      currentScore = (this.props.list.posture>0.5?"Good posture":"Leaning back");
+    if (typeof this.props.list !== 'undefined' && this.props.list.occupied){
+      currentScore = (this.props.list.posture>0.5?"Good posture":"Bad posture :(");
       if (this.props.list.posture > 0.5){
         thumburi = require("../../../../assets/up.png");
       }else{
