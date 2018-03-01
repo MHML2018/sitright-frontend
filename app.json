@@ -6,6 +6,7 @@
       "hideExponentText": false,
       "icon": "./assets/logo_lg.png"
     },
+	"icon": "./assets/app_logo.png",
     "orientation": "portrait",
     "primaryColor": "#cccccc",
     "packagerOpts": {
