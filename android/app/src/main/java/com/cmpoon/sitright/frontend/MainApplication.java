@@ -1,4 +1,4 @@
-package com.sitrightfrontend;
+package com.cmpoon.sitright.frontend;
 
 import android.app.Application;
 

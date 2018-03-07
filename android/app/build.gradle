@@ -98,8 +98,8 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.sitrightfrontend"
-        minSdkVersion 16
+        applicationId "com.cmpoon.sitright.frontend"
+        minSdkVersion 18
         targetSdkVersion 22
         versionCode 1
         versionName "1.0"
