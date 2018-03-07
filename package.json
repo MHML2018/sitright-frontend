@@ -4,6 +4,7 @@
   "private": true,
   "devDependencies": {
     "babel-eslint": "8.1.0",
+    "babel-preset-react-native-stage-0": "^1.0.1",
     "eslint": "4.14.0",
     "eslint-plugin-flowtype": "2.40.1",
     "eslint-plugin-import": "2.8.0",
@@ -15,15 +16,12 @@
     "flow-typed": "2.2.3",
     "husky": "0.14.3",
     "jest-expo": "^24.0.0",
-    "react-native-scripts": "1.8.1",
     "react-test-renderer": "16.2.0"
   },
-  "main": "node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-native-scripts start",
-    "eject": "react-native-scripts eject",
-    "android": "react-native-scripts android",
-    "ios": "react-native-scripts ios",
+    "start": "react-native start",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
     "test": "yarn jest && flow && eslint .",
     "jest": "node node_modules/jest/bin/jest.js",
     "precommit": "yarn test"
@@ -35,7 +33,6 @@
     ]
   },
   "dependencies": {
-    "expo": "^24.0.0",
     "lodash": "4.17.4",
     "native-base": "2.3.5",
     "react": "^16.0.0",
