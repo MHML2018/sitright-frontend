@@ -1,6 +1,7 @@
 const initialState = {
 	list: [],
 	isLoading: true,
+   graphData: [],
 };
 
 export default function(state: any = initialState, action: Function) {
@@ -17,5 +18,11 @@ export default function(state: any = initialState, action: Function) {
 			isLoading: action.isLoading,
 		};
 	}
+   if (action.type == "FETCH_GRAPH_SUCCESS") {
+      return {
+         ...state,
+         graphData: action.graph,
+      };
+   }
 	return state;
 }

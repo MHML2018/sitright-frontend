@@ -9,7 +9,7 @@ const routes = [
 		caption: "Home",
 	},
 	{
-		route: "ScorePage",
+		route: "GraphPage",
 		caption: "Past Postures",
 	},
 	{
