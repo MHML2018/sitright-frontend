@@ -30,10 +30,16 @@ class Home extends React.Component<Props, State> {
     var thumburi = require("../../../../assets/empty.png");
     if (typeof this.props.list !== 'undefined' && this.props.list.occupied){
       currentScore = (this.props.list.posture>0.5?"Good posture":"Bad posture :(");
-      if (this.props.list.posture > 0.5){
+      if (this.props.list.posture == 0){
         thumburi = require("../../../../assets/up.png");
-      }else{
-        thumburi = require("../../../../assets/down.png");
+      }else if (this.props.list.posture == 1) {
+        thumburi = require("../../../../assets/back.png");
+      }else if (this.props.list.posture == 2) {
+        thumburi = require("../../../../assets/forward.png");
+      }else if (this.props.list.posture == 3) {
+        thumburi = require("../../../../assets/left.png");
+      }else if (this.props.list.posture == 4) {
+        thumburi = require("../../../../assets/right.png");
       }
     }
 
