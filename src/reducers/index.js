@@ -5,5 +5,6 @@ import homeReducer from "../container/HomeContainer/reducer";
 
 export default combineReducers({
 	form: formReducer,
-	homeReducer,
+	homeReducer,,
+	bleReducer,
 });

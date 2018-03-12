@@ -2,13 +2,13 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import Home from "../../stories/screens/Home";
+import BLEContainer from "./BLEContainer";
 import datas from "./data";
 import { fetchList } from "./actions";
 export interface Props {
 	navigation: any,
 	fetchList: Function,
 	data: Object,
-	thumburi: Object,
 }
 
 export interface State {}
@@ -23,7 +23,10 @@ class HomeContainer extends React.Component<Props, State> {
 		this.refreshData();
 	}
 	render() {
-		return <Home navigation={this.props.navigation} list={this.props.data} onRefresh={() => this.refreshData()}/>;
+		return (
+		<Home navigation={this.props.navigation} list={this.props.data} onRefresh={() => this.refreshData()}/>
+		<BLEContainer />
+		);
 	}
 }
 
