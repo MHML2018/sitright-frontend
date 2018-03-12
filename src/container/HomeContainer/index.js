@@ -2,7 +2,6 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import Home from "../../stories/screens/Home";
-import BLEContainer from "./BLEContainer";
 import datas from "./data";
 import { fetchList } from "./actions";
 export interface Props {
@@ -25,7 +24,6 @@ class HomeContainer extends React.Component<Props, State> {
 	render() {
 		return (
 		<Home navigation={this.props.navigation} list={this.props.data} onRefresh={() => this.refreshData()}/>
-		<BLEContainer />
 		);
 	}
 }
