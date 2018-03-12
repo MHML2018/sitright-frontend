@@ -1,8 +1,9 @@
 // @flow
 import React, { Component } from 'react';
 import { Platform, View, Text } from 'react-native';
+import { connect } from "react-redux";
 import { BleManager } from 'react-native-ble-plx';
-import { pushBLEdata } from 'actions';
+import { pushBLEdata } from './actions';
 
 export interface Props {
 	pushBLEdata: Function,
@@ -14,7 +15,7 @@ export interface Props {
 
 export interface State {}
 
-export default class BLEContainer extends Component {
+class BLEContainer extends Component {
 
    constructor() {
      super()
@@ -50,7 +51,7 @@ export default class BLEContainer extends Component {
 
               device.connect()
                 .then((device) => {
-                  .info("BLE Found - Discovering services and characteristics...")
+                  this.info("BLE Found - Discovering services and characteristics...")
                     return device.discoverAllServicesAndCharacteristics()
                 })
                 .then((device) => {
@@ -62,12 +63,13 @@ export default class BLEContainer extends Component {
                   return this.setupNotifications(device);
                 })
                 .then(() => {
-                  this.info("BLE Listening...")
-                  this.prop.isBLEConnected = true
-                }
+                  this.info("BLE Listening...");
+                  this.prop.isBLEConnected = true;
+                })
                 .catch((error) => {
                     // Handle errors
                     console.error("Cannot connect to Chair BLE services.",error);
+					this.prop.isBLEConnected = false;
                 });
 
             // Stop scanning as it's not necessary if you are scanning for one device.
@@ -94,7 +96,7 @@ export default class BLEContainer extends Component {
             this.error(error.message)
             return
           }
-          this.info("BLE Rx from "+characteristic.uuid+" : " characteristic.value);
+          this.info("BLE Rx from "+characteristic.uuid+" : " +characteristic.value);
           this.bleRx(characteristic.uuid, characteristic.value)
       })
 
