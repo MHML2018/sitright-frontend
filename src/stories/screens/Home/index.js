@@ -15,8 +15,10 @@ import {
   ListItem,
   View
 } from "native-base";
-
 import styles from "./styles";
+
+import BLEContainer from "../../../container/BLEContainer";
+
 export interface Props {
   navigation: any;
   list: any;
@@ -105,6 +107,7 @@ class Home extends React.Component<Props, State> {
           }
         }) */}
           </List>
+		  <BLEContainer navigation={this.props.navigation} list={this.props.list} onRefresh={() => this.props.onRefresh()}/>
         </Content>
       </Container>
     );
