@@ -14,7 +14,7 @@ class ScorePage extends React.Component<Props, State> {
 	render() {
 		const param = this.props.navigation.state.params;
 		const iconDim = 100;
-		const rowStyle = {flex:1, flexDirection: "row", alignItems :"center", flexWrap: "wrap"};
+		const rowStyle = {flex:1, flexDirection: "row", flexWrap: "wrap", justifyContent: 'center', alignItems: 'center'};
 		return (
 			<Container style={styles.container}>
 				<Header>
@@ -32,7 +32,7 @@ class ScorePage extends React.Component<Props, State> {
 				</Header>
 
 				<Content padder>
-               <View style={{flex:1, flexDirection: "column", justifyContent: 'space-between'}}>
+               <View style={{flex:1, flexDirection: "column", alignItems :"center"}}>
                   <View style={rowStyle}>
                      <Image style={{width: iconDim, height: iconDim}} source={require('../../../../assets/login_medal.png')} />
                      <Text>You have logged in 36 days in a row!</Text>
