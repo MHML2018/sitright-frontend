@@ -21,7 +21,6 @@ import styles from "./styles";
 export interface Props {
   navigation: any;
   data: any;
-
 }
 export interface State {}
 class LeaderPage extends React.Component<Props, State> {
@@ -44,7 +43,22 @@ class LeaderPage extends React.Component<Props, State> {
           <Right />
         </Header>
         <Content>
-        <Text>Poon: 70%\nBen: 179%</Text>
+		{ this.props.data.map((person, i) => {
+             <ListItem
+                  key={person.name}
+                  onPress={() =>
+                    this.props.navigation.navigate("LeaderBoard", {
+                      name: { person.name }
+                    })}
+                >
+                  <Text>{person.name} : </Text>
+				  <Text>{person.score}%</Text>
+                </ListItem>
+            
+          }
+        })
+		}		
+          </List>
         </Content>
       </Container>
     );

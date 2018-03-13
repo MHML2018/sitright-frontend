@@ -17,7 +17,7 @@ const routes = [
 		caption: "Goals",
 	},
 	{
-		route: "ScorePage",
+		route: "LeaderBoard",
 		caption: "Friends",
 	},
 	{

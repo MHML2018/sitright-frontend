@@ -6,6 +6,7 @@ import Login from "./container/LoginContainer";
 import Home from "./container/HomeContainer";
 import ScorePage from "./container/ScorePageContainer";
 import GraphPage from "./container/GraphContainer";
+import LeaderBoard from "./container/LeaderBoard";
 import Sidebar from "./container/SidebarContainer";
 
 const Drawer = DrawerNavigator(
