@@ -15,8 +15,10 @@ import {
   ListItem,
   View
 } from "native-base";
-
 import styles from "./styles";
+
+import BLEContainer from "../../../container/BLEContainer";
+
 export interface Props {
   navigation: any;
   list: any;
@@ -29,17 +31,22 @@ class Home extends React.Component<Props, State> {
     var currentScore = "Please sit on chair for current posture.";
     var thumburi = require("../../../../assets/empty.png");
     if (typeof this.props.list !== 'undefined' && this.props.list.occupied){
-      currentScore = (this.props.list.posture>0.5?"Good posture":"Bad posture :(");
+      currentScore = (this.props.list.posture == 0?"Good posture":"Bad posture :(");
       if (this.props.list.posture == 0){
         thumburi = require("../../../../assets/up.png");
+		currentScore = "Good posture :)";
       }else if (this.props.list.posture == 1) {
         thumburi = require("../../../../assets/back.png");
+		currentScore = "Leaning too far back :(";
       }else if (this.props.list.posture == 2) {
-        thumburi = require("../../../../assets/forward.png");
+        thumburi = require("../../../../assets/forwards.png");
+		currentScore = "Leaning too far forward :(";
       }else if (this.props.list.posture == 3) {
         thumburi = require("../../../../assets/left.png");
+		currentScore = "Leaning too far left :(";
       }else if (this.props.list.posture == 4) {
         thumburi = require("../../../../assets/right.png");
+		currentScore = "Leaning too far right :(";
       }
     }
 
@@ -111,6 +118,7 @@ class Home extends React.Component<Props, State> {
           }
         }) */}
           </List>
+		  <BLEContainer navigation={this.props.navigation} list={this.props.list} onRefresh={() => this.props.onRefresh()}/>
         </Content>
       </Container>
     );

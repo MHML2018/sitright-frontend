@@ -1,9 +1,14 @@
 {
-  "name": "SitRight-FrontEnd",
-  "version": "1.3.0",
+  "name": "SitRight",
+  "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "react-native-scripts": "1.11.1",
+    "jest-expo": "25.0.0",
+    "react-test-renderer": "16.2.0",
     "babel-eslint": "8.1.0",
+    "babel-preset-react-native": "^2.1.0",
+    "babel-preset-react-native-stage-0": "^1.0.1",
     "eslint": "4.14.0",
     "eslint-plugin-flowtype": "2.40.1",
     "eslint-plugin-import": "2.8.0",
@@ -12,35 +17,29 @@
     "eslint-plugin-react": "7.5.1",
     "eslint-plugin-react-native": "3.2.0",
     "flow-bin": "0.62.0",
-    "flow-typed": "2.2.3",
-    "husky": "0.14.3",
-    "jest-expo": "^24.0.0",
-    "react-native-scripts": "1.8.1",
-    "react-test-renderer": "16.2.0"
+    "flow-typed": "2.2.3"
   },
-  "main": "node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "start": "react-native-scripts start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "yarn jest && flow && eslint .",
-    "jest": "node node_modules/jest/bin/jest.js",
-    "precommit": "yarn test"
+    "test": "node node_modules/jest/bin/jest.js"
   },
   "jest": {
-    "preset": "jest-expo",
-    "transformIgnorePatterns": [
-      "node_modules/(?!(react-native|lottie-react-native|expo|react-native-maps|react-native-svg|react-native-branch|native-base-shoutem-theme|react-native-easy-grid|react-native-drawer|react-native-vector-icons|react-native-keyboard-aware-scroll-view|react-navigation|native-base|@expo|react-native-scrollable-tab-view)/)"
-    ]
+    "preset": "jest-expo"
   },
   "dependencies": {
-    "expo": "^24.0.0",
-    "lodash": "4.17.4",
-    "native-base": "2.3.5",
-    "react": "^16.0.0",
-    "react-native": "0.51.0",
-    "react-navigation": "1.0.0-beta.21",
+    "@expo/vector-icons": "^6.3.1",
+    "ajv": "^6.2.1",
+    "expo": "^25.0.0",
+    "native-base": "^2.3.10",
+    "prettier": "^1.11.1",
+    "react": "16.2.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-25.0.0.tar.gz",
+    "react-native-ble-plx": "^0.8.0",
+    "react-navigation": "1.0.0-beta.27",
     "react-redux": "5.0.6",
     "redux": "3.7.2",
     "redux-form": "7.2.0",

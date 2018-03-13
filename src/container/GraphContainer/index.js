@@ -1,20 +1,21 @@
 // @flow
 import * as React from "react";
 import { connect } from "react-redux";
-import Home from "../../stories/screens/Home";
-import datas from "./data";
+import GraphPage from "../../stories/screens/GraphPage";
 import { fetchList } from "./actions";
+
 export interface Props {
 	navigation: any,
 	fetchList: Function,
 	data: Object,
+   graph: Object,
 }
 
 export interface State {}
-class HomeContainer extends React.Component<Props, State> {
+class GraphContainer extends React.Component<Props, State> {
 
 	refreshData() {
-		const jsonurl = "http://mhml-demo.cmpoon.com:8000/";
+		const jsonurl = "http://mhml-demo.cmpoon.com:8000/history";
 		this.props.fetchList(jsonurl);
 	}
 
@@ -23,7 +24,7 @@ class HomeContainer extends React.Component<Props, State> {
 	}
 	render() {
 		return (
-		<Home navigation={this.props.navigation} list={this.props.data} onRefresh={() => this.refreshData()}/>
+		<GraphPage navigation={this.props.navigation} data={this.props.graph} onRefresh={() => this.refreshData()}/>
 		);
 	}
 }
@@ -37,5 +38,6 @@ function bindAction(dispatch) {
 const mapStateToProps = state => ({
 	data: state.homeReducer.list,
 	isLoading: state.homeReducer.isLoading,
+   graph: state.homeReducer.graphData,
 });
-export default connect(mapStateToProps, bindAction)(HomeContainer);
+export default connect(mapStateToProps, bindAction)(GraphContainer);

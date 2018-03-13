@@ -44,6 +44,11 @@ class Login extends React.Component<Props, State> {
 							<Text>Sign In with Facebook</Text>
 						</Button>
 					</View>
+					<View padder>
+						<Button block onPress={() => this.props.onLogin()}>
+							<Text>Register</Text>
+						</Button>
+					</View>
 				</Content>
 				<Footer style={{ backgroundColor: "#F8F8F8" }}>
 					<View style={{ alignItems: "center", opacity: 0.5, flexDirection: "row" }}>
