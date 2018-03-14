@@ -43,8 +43,10 @@ class GraphPage extends React.Component<Props, State> {
           </Body>
           <Right />
         </Header>
-        <Content style={{just}}>
-            <Image style={{width:300, height:300, justifyContent: 'center', alignItems: 'center'}} source={require('../../../../assets/graph.png')} />
+        <Content>
+		<View style={{justifyContent: 'center', alignItems: 'center', alignSelf: 'stretch'}}>
+            <Image style={{width: 350, height:400,  alignSelf: 'stretch', justifyContent: 'center', alignItems: 'center'}} source={require('../../../../assets/graph.png')} />
+		</View>
         </Content>
       </Container>
     );

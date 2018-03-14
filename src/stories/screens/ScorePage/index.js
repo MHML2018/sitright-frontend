@@ -32,7 +32,7 @@ class ScorePage extends React.Component<Props, State> {
 				</Header>
 
 				<Content padder>
-               <View style={{flex:1, flexDirection: "column", alignItems :"center"}}>
+               <View style={{flex:1, flexDirection: "column", alignItems :"center" }}>
                   <View style={rowStyle}>
                      <Image style={{width: iconDim, height: iconDim}} source={require('../../../../assets/login_medal.png')} />
                      <Text>You have logged in 36 days in a row!</Text>
@@ -47,7 +47,7 @@ class ScorePage extends React.Component<Props, State> {
                   </View>
                   <View style={rowStyle}>
                      <Image style={{width: iconDim, height: iconDim}} source={require('../../../../assets/top_score_grey.png')} />
-                     <Text>You have lost against your friends:<br/> Matt has the high score of 79!</Text>
+                     <Text>You have lost against your friends:</Text><Text>Matt has the high score of 79!</Text>
                   </View>
                </View>
 				</Content>
