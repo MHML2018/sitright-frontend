@@ -1,7 +1,8 @@
 const initialState = {
 	list: [],
 	isLoading: true,
-   graphData: [],
+    graphData: [],
+	lastVib: 0,
 };
 
 export default function(state: any = initialState, action: Function) {
@@ -22,6 +23,12 @@ export default function(state: any = initialState, action: Function) {
       return {
          ...state,
          graphData: action.graph,
+      };
+   }
+   if (action.type == "VIBRATE") {
+      return {
+         ...state,
+         lastVib: action.lastVib,
       };
    }
 	return state;

@@ -39,12 +39,12 @@ class GraphPage extends React.Component<Props, State> {
             </Button>
           </Left>
           <Body>
-            <Title>Current Posture</Title>
+            <Title>Past Score</Title>
           </Body>
           <Right />
         </Header>
-        <Content>
-            <Image style={{width:300, height:300}} source={require('../../../../assets/graph.png')} />
+        <Content style={{just}}>
+            <Image style={{width:300, height:300, justifyContent: 'center', alignItems: 'center'}} source={require('../../../../assets/graph.png')} />
         </Content>
       </Container>
     );

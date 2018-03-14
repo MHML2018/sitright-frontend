@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Image, Platform } from "react-native";
+import { Image, Platform , Vibration } from "react-native";
 import {
   Container,
   Header,
@@ -22,6 +22,8 @@ import BLEContainer from "../../../container/BLEContainer";
 export interface Props {
   navigation: any;
   list: any;
+  onVibrate: any;
+  onRefresh: any;
 //  thumburi: any;
 }
 export interface State {}
@@ -33,8 +35,9 @@ class Home extends React.Component<Props, State> {
     if (typeof this.props.list !== 'undefined' && this.props.list.occupied){
       currentScore = (this.props.list.posture == 0?"Good posture":"Bad posture :(");
       if (this.props.list.posture == 0){
-        thumburi = require("../../../../assets/up.png");
+        thumburi = require("../../../../assets/green.png");
 		currentScore = "Good posture :)";
+		//Vibration.cancel();
       }else if (this.props.list.posture == 1) {
         thumburi = require("../../../../assets/back.png");
 		currentScore = "Leaning too far back :(";
@@ -47,7 +50,11 @@ class Home extends React.Component<Props, State> {
       }else if (this.props.list.posture == 4) {
         thumburi = require("../../../../assets/right.png");
 		currentScore = "Leaning too far right :(";
+      }else if (this.props.list.posture == 5) {
+        thumburi = require("../../../../assets/down.png");
+		currentScore = "You're crossed-legged! :(";
       }
+	  
     }
 
 
@@ -118,7 +125,7 @@ class Home extends React.Component<Props, State> {
           }
         }) */}
           </List>
-		  <BLEContainer navigation={this.props.navigation} list={this.props.list} onRefresh={() => this.props.onRefresh()}/>
+		  {/* <BLEContainer navigation={this.props.navigation} list={this.props.list} onRefresh={() => this.props.onRefresh()}/> */}
         </Content>
       </Container>
     );

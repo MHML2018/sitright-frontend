@@ -47,7 +47,7 @@ class ScorePage extends React.Component<Props, State> {
                   </View>
                   <View style={rowStyle}>
                      <Image style={{width: iconDim, height: iconDim}} source={require('../../../../assets/top_score_grey.png')} />
-                     <Text>You have lost against your friends: Matt has the high score of 79</Text>
+                     <Text>You have lost against your friends:<br/> Matt has the high score of 79!</Text>
                   </View>
                </View>
 				</Content>

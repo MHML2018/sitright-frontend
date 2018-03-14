@@ -19,7 +19,8 @@ export function fetchList(url: any) {
 			 }, 500);
 		})
 		.catch((error) => {
-			console.warn("Cannot get graph data!");
+			console.log("Graph data ERROR: ", error);
+//			console.warn("Cannot get graph data!");
 			/*Toast.show({
         text: "Uh-oh! Cannot connect to chair :'(",
         duration: 1000,

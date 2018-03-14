@@ -21,9 +21,11 @@ import styles from "./styles";
 export interface Props {
   navigation: any;
   data: any;
+  myName: any;
 }
 export interface State {}
-class LeaderPage extends React.Component<Props, State> {
+
+class LeaderBoardPage extends React.Component<Props, State> {
   render() {
     return (
       <Container style={styles.container}>
@@ -43,26 +45,28 @@ class LeaderPage extends React.Component<Props, State> {
           <Right />
         </Header>
         <Content>
-		{ this.props.data.map((person, i) => {
-             <ListItem
-                  key={person.name}
-                  onPress={() =>
-                    this.props.navigation.navigate("LeaderBoard", {
-                      name: { person.name }
-                    })}
-                >
-                  <Text>{person.name} : </Text>
-				  <Text>{person.score}%</Text>
+		<List>
+			{ this.props.data.map((item, i) => {
+				return (
+                <ListItem key={item.name} >
+					{ 
+					(item.name != this.props.myName ?
+					(
+					<Text>{item.name} : {item.score}</Text>
+					):(
+					<Text style={{fontWeight: 'bold'}}>You! : {item.score}</Text>
+					)
+					)
+					}
                 </ListItem>
-            
-          }
-        })
-		}		
-          </List>
+            )
+          
+        })}	
+        </List>
         </Content>
       </Container>
     );
   }
 }
 
-export default LeaderPage;
+export default LeaderBoardPage;
