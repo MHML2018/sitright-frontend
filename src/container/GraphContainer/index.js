@@ -9,6 +9,7 @@ export interface Props {
 	fetchList: Function,
 	data: Object,
    graph: Object,
+   graphData: Object,
 }
 
 export interface State {}

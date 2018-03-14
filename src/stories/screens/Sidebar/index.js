@@ -20,10 +20,10 @@ const routes = [
 		route: "LeaderBoardPage",
 		caption: "Friends",
 	},
-/*	{
-		route: "ScorePage",
-		caption: "Settings",
-	}, */
+	{
+		route: "NHSPage",
+		caption: "NHS Guideline",
+	},
 	{
 		route: "Login",
 		caption: "Logout",

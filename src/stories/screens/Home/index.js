@@ -51,7 +51,7 @@ class Home extends React.Component<Props, State> {
         thumburi = require("../../../../assets/right.png");
 		currentScore = "Leaning too far right :(";
       }else if (this.props.list.posture == 5) {
-        thumburi = require("../../../../assets/down.png");
+        thumburi = require("../../../../assets/cross.png");
 		currentScore = "You're crossed-legged! :(";
       }
 	  

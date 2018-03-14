@@ -26,6 +26,16 @@ export interface Props {
 export interface State {}
 class GraphPage extends React.Component<Props, State> {
   render() {
+	  var graphData = [];
+	  if (typeof this.props.data === 'undefined'){
+		graphData = [];
+	  }else if (typeof this.props.data.data === 'undefined' ){
+		graphData = [];
+	  }else{
+		  graphData = this.props.data.data;
+		  
+	  }
+	  
     return (
       <Container style={styles.container}>
         <Header>
@@ -46,6 +56,25 @@ class GraphPage extends React.Component<Props, State> {
         <Content>
 		<View style={{justifyContent: 'center', alignItems: 'center', alignSelf: 'stretch'}}>
             <Image style={{width: 350, height:400,  alignSelf: 'stretch', justifyContent: 'center', alignItems: 'center'}} source={require('../../../../assets/graph.png')} />
+		</View>
+		<View style={{justifyContent: 'center', alignItems: 'center', alignSelf: 'stretch'}}>
+            <List>
+		{
+		
+		graphData.map((item, i) => {
+			var timeNow = Date.now();
+			//if (item.x > (timeNow/1000 - 60)){
+			if (true){
+				return (
+                <ListItem  >
+					<Text>{item.x} : {Math.round(item.y*100)+"%"}</Text>
+                </ListItem>
+				)
+			}          
+        })
+				
+		}	
+        </List>
 		</View>
         </Content>
       </Container>

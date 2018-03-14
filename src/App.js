@@ -7,6 +7,7 @@ import Home from "./container/HomeContainer";
 import ScorePage from "./container/ScorePageContainer";
 import GraphPage from "./container/GraphContainer";
 import LeaderBoardPage from "./container/LeaderBoardContainer";
+import NHSPage from "./container/NHSContainer";
 import Sidebar from "./container/SidebarContainer";
 
 const Drawer = DrawerNavigator(
@@ -25,6 +26,7 @@ const App = StackNavigator(
 		ScorePage: { screen: ScorePage },
         GraphPage: { screen: GraphPage },
 	    LeaderBoardPage: { screen: LeaderBoardPage },
+		NHSPage: { screen: NHSPage },
 		Drawer: { screen: Drawer },
 	},
 	{

@@ -1,7 +1,7 @@
 export function fetchListSuccess(list: Object, url: any) {
 	return {
 		type: "FETCH_GRAPH_SUCCESS",
-		graph: list,
+		graph,
 	};
 }
 
@@ -11,10 +11,12 @@ export function fetchList(url: any) {
 	.then(e => e.json())
 		.then(function(response){
 			console.log("Graph data fetch successful: "+url);
-			//console.log(response);
+			console.log(response);
 			dispatch(fetchListSuccess(response, url));
-			
-			 
+			//Call next update
+			 setTimeout(() => {
+				 dispatch(fetchList(url))
+			 }, 500);
 		})
 		.catch((error) => {
 			console.log("Graph data ERROR: ", error);
